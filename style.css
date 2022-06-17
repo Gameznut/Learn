@@ -1,9 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --primary-Red: hsl(0, 100%, 74%);
+    --primary-Green: hsl(154, 59%, 51%);
+    --accent-Blue: hsl(248, 32%, 49%);
+    --neutral-Dark-Blue: hsla(249, 10%, 26%, 0.425);
+    --neutral-Grayish-Blue: hsl(246, 25%, 77%);
+    --small: 400;
+    --meduim: 500;
+    --semibold: 600;
+    --bold: 700
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins';
+    font-size: 16px;
 }
 
-h1 {
-    color: red;
+
+.backgroundImg {
+    background-image: url('./images/bg-intro-desktop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+    top: 0%;
+    z-index: -1;
+    background-color: var(--primary-Red)
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+    /* margin: 1rem; */
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.content:nth-child(1) h1 {
+    font-weight: var(--bold);
+    line-height: 4.5rem;
+    font-size: 60px;
+    color: white;
+}
+
+.content:nth-child(1) p {
+    font-size: 20px;
+    font-weight: var(--small);
+    color: white;
+}
+
+.content:nth-child(2) .try {
+    background-color: var(--accent-Blue);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0px 10px 3px var(--neutral-Dark-Blue);
+}
+
+.content:nth-child(2) p {
+    font-size: 20px;
+    color: white;
+}
+
+.content:nth-child(2) p span {
+    font-weight: var(--bold);
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+}
+
+.content:nth-child(2) form {
+    background-color: white;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    width: 100%;
+    box-shadow: 0px 10px 3px var(--neutral-Dark-Blue);
+    border-radius: 1rem;
+}
+
+.content:nth-child(2) input {
+    width: 100%;
+    border-radius: .3rem;
+    outline: none;
+    transition: all .4s ease-in-out;
+    border: solid 1px var(--neutral-Dark-Blue);
+    padding: 1rem;
+}
+
+.content:nth-child(2) input::placeholder {
+    font-weight: var(--semibold);
+}
+
+.content:nth-child(2) input[type=submit],
+.content:nth-child(2) input[type=submit]:hover,
+.content:nth-child(2) input[type=submit]:focus {
+    box-shadow: 0px -5px 0px var(--neutral-Dark-Blue) inset;
+    background-color: var(--primary-Green);
+    color: white;
+    font-weight: var(--semibold);
+    text-transform: uppercase;
+    border: none;
+
+}
+
+.content:nth-child(2) input[type=submit]:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.content:nth-child(2) input:hover,
+.content:nth-child(2) input:focus {
+    border: black 1px solid;
+}
+
+.content:nth-child(2) form p {
+    color: var(--neutral-Grayish-Blue);
+    font-size: 12px;
+    text-align: center;
+}
+
+.content:nth-child(2) form p span {
+    font-size: 12px;
+    color: var(--primary-Red);
+    font-weight: var(--semibold);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.content:nth-child(2) input[type=text]:invalid:focus,
+.content:nth-child(2) input[type=password]:invalid:focus,
+.content:nth-child(2) input[type=email]:invalid:focus {
+    background-image: url('./images/icon-error.svg');
+    background-position: right center;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+
+@media screen and (max-width:600px) {
+    section {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+
+    .backgroundImg {
+        background-image: url('./images/bg-intro-mobile.png');
+        position: fixed;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .content:nth-child(1) h1 {
+        font-size: 28px;
+        line-height: 2rem;
+    }
+
+    .content:nth-child(1) p {
+        font-size: 16px;
+    }
+
+    .content:nth-child(2) p,
+    .content:nth-child(2) p span {
+        font-size: 16px;
+    }
+
+    .content:nth-child(2) form {
+        padding: 1.7rem;
+        gap: 1.4rem;
+    }
+
+    .content:nth-child(2) form p span {
+
+        margin-bottom: 0rem;
+    }
 }

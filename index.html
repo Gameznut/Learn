@@ -24,7 +24,7 @@
           </div>
           <div>
             <form>
-              <div>
+              <div class="input"data-error="First Name cannot be empty">
                 <input
                   type="text"
                   name="fname"
@@ -33,16 +33,16 @@
                   placeholder="First Name"
                 />
               </div>
-              <div>
+              <div class="input"data-error="Last Name cannot be empty">
                 <input
                   type="text"
                   name="lname"
                   id="lname"
-                  required
+                  required 
                   placeholder="Last Name"
                 />
               </div>
-              <div>
+              <div class="input"data-error="Looks like this is not an email">
                 <input
                   type="email"
                   name="email"
@@ -51,7 +51,7 @@
                   placeholder="Email Address"
                 />
               </div>
-              <div>
+              <div class="input"data-error="Password cannot be empty">
                 <input
                   type="password"
                   name="password"

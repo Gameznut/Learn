@@ -152,15 +152,24 @@ section {
     margin-bottom: 2rem;
 }
 
-.content:nth-child(2) input[type=text]:invalid:focus,
-.content:nth-child(2) input[type=password]:invalid:focus,
-.content:nth-child(2) input[type=email]:invalid:focus {
+.content:nth-child(2) input[type=text]:required:invalid:focus-visible,
+.content:nth-child(2) input[type=password]:required:invalid:focus-visible,
+.content:nth-child(2) input[type=email]:required:invalid:focus-visible {
     background-image: url('./images/icon-error.svg');
-    background-position: right center;
-    position: relative;
+    background-position: 90% center;
     background-repeat: no-repeat;
+    border: var(--primary-Red) 1px solid;
 }
 
+.content:nth-child(2)  .input[data-error]::after {
+    color: var(--primary-Red);
+    content: attr(data-error);
+    float: right;
+    font-size: 12px;
+    font-weight: var(--small);
+    margin-top: .5rem;
+    font-style: italic;
+}
 
 @media screen and (max-width:600px) {
     section {
